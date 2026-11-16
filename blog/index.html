@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<section class="page wrap narrow">
+  <header class="page-head">
+    <p class="kicker">tail -f /var/log/brain</p>
+    <h1>Blog</h1>
+    <p class="lede">Field notes on sysadmin work, C#, homelab experiments, and the world outside the server room.</p>
+  </header>
+
+  <div class="filter">
+    <input type="search" id="post-search" placeholder="Search posts…" aria-label="Search posts">
+    <div class="tag-filter">
+      <button class="tag active" data-tag="">all</button>
+      {% assign tags = site.tags | sort %}
+      {% for tag in tags %}<button class="tag" data-tag="{{ tag[0] | slugify }}">#{{ tag[0] }}</button>{% endfor %}
+    </div>
+  </div>
+
+  <div class="post-list" id="posts">
+    {% for post in site.posts %}
+    <div class="post-item" data-tags="{% for t in post.tags %}{{ t | slugify }} {% endfor %}" data-text="{{ post.title | downcase | escape }} {{ post.excerpt | strip_html | downcase | escape }}">
+      {% include post-card.html %}
+    </div>
+    {% endfor %}
+  </div>
+  <p id="no-results" hidden>No posts match. Try a different search.</p>
+</section>

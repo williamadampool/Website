@@ -1,0 +1,73 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <svg class="topo" aria-hidden="true" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M-20 300 C 120 240, 220 330, 380 260 S 640 200, 820 250"/>
+      <path d="M-20 270 C 130 210, 230 300, 390 230 S 650 170, 820 220"/>
+      <path d="M-20 240 C 140 180, 240 270, 400 200 S 660 140, 820 190"/>
+      <path d="M-20 210 C 150 150, 250 240, 410 170 S 670 110, 820 160"/>
+      <path d="M-20 180 C 160 120, 260 210, 420 140 S 680 80, 820 130"/>
+      <path d="M-20 150 C 170 90, 270 180, 430 110 S 690 50, 820 100"/>
+      <path d="M-20 120 C 180 60, 280 150, 440 80 S 700 20, 820 70"/>
+      <ellipse cx="560" cy="95" rx="60" ry="22"/>
+      <ellipse cx="560" cy="95" rx="32" ry="11"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner">
+    <p class="kicker"><span class="blink">▍</span> uptime: always learning</p>
+    <h1>Hi, I'm {{ site.author.name | split: ' ' | first }}.<br><span class="accent">I keep the lights on</span> — and take things apart to see how they work.</h1>
+    <p class="lede">Systems administrator working across <strong>Nutanix</strong>, <strong>Microsoft</strong> and <strong>Azure</strong>, currently leveling up in <strong>C#</strong>. Off the clock: weather maps, dirt roads, and greasy knuckles.</p>
+    <div class="cta">
+      <a class="btn" href="{{ '/work/' | relative_url }}">See my work</a>
+      <a class="btn ghost" href="{{ '/blog/' | relative_url }}">Read the blog</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2 class="section-title"><span>01</span> The stack</h2>
+  <div class="grid cards">
+    <div class="card">
+      <h3>Hyperconverged</h3>
+      <p>Nutanix AHV &amp; Prism — clusters, storage containers, snapshots, upgrades with LCM, and keeping VMs happy.</p>
+      <p class="chips"><span>AHV</span><span>Prism Central</span><span>LCM</span><span>Protection Domains</span></p>
+    </div>
+    <div class="card">
+      <h3>Microsoft</h3>
+      <p>Windows Server, Active Directory, Group Policy, DNS/DHCP, and Microsoft 365 administration.</p>
+      <p class="chips"><span>AD DS</span><span>GPO</span><span>M365</span><span>Intune</span></p>
+    </div>
+    <div class="card">
+      <h3>Azure</h3>
+      <p>Entra ID, hybrid identity, VMs, networking and governance — bridging on-prem and cloud.</p>
+      <p class="chips"><span>Entra ID</span><span>Arc</span><span>VNet</span><span>RBAC</span></p>
+    </div>
+    <div class="card">
+      <h3>Automation &amp; Code</h3>
+      <p>PowerShell for the daily grind, C# / .NET for building real tools. If I do it twice, I script it.</p>
+      <p class="chips"><span>PowerShell</span><span>C#</span><span>.NET</span><span>Git</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2 class="section-title"><span>02</span> Latest from the blog</h2>
+  <div class="post-list">
+    {% for post in site.posts limit:3 %}
+      {% include post-card.html %}
+    {% endfor %}
+  </div>
+  <p><a class="more" href="{{ '/blog/' | relative_url }}">All posts →</a></p>
+</section>
+
+<section class="wrap section">
+  <h2 class="section-title"><span>03</span> Off the clock</h2>
+  <div class="grid three">
+    <div class="mini"><span class="ico">🌩️</span><h3>Weather &amp; Earth</h3><p>Radar loops, skew-T charts, and geology road-cuts.</p></div>
+    <div class="mini"><span class="ico">🔧</span><h3>Wrenching</h3><p>Aspiring mechanic. Diagnostics are just troubleshooting with more grease.</p></div>
+    <div class="mini"><span class="ico">🥾</span><h3>Outdoors</h3><p>Trails, campfires, and places with no cell signal.</p></div>
+  </div>
+</section>

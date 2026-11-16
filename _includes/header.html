@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-prompt">~$</span> {{ site.author.name | downcase | replace: ' ', '' }}
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="site-nav">
+      {% assign p = page.url %}
+      <a href="{{ '/' | relative_url }}" {% if p == '/' %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/about/' | relative_url }}" {% if p == '/about/' %}aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/work/' | relative_url }}" {% if p == '/work/' %}aria-current="page"{% endif %}>Work</a>
+      <a href="{{ '/blog/' | relative_url }}" {% if p contains '/blog' %}aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/contact/' | relative_url }}" {% if p == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
+      <button class="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------
+# Site settings — edit these to make the site yours.
+# ---------------------------------------------------------------
+title: William Pool
+tagline: Systems Administrator · Hybrid Cloud · Life Hacker
+description: >-
+  Notes from the server room and the trailhead — Nutanix, Microsoft,
+  Azure, C#, and the occasional weather nerd tangent.
+author:
+  name: William Pool
+  role: Systems Administrator
+  location: ""            # e.g. "Somewhere, USA"
+  email: ""               # optional — leave blank to hide
+  github: williamadampool
+  linkedin: ""            # e.g. "your-linkedin-handle"
+
+# If you deploy to https://williamadampool.github.io/Website set baseurl to "/Website".
+# If you use a custom domain or a <user>.github.io repo, leave it as "".
+url: ""
+baseurl: ""
+
+permalink: /blog/:year/:month/:day/:title/
+timezone: America/Chicago
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+
+excerpt_separator: "<!--more-->"

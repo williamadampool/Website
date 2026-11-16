@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="post wrap narrow">
+  <header class="page-head">
+    <p class="kicker">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+      {% assign words = content | number_of_words %} · {{ words | divided_by: 200 | plus: 1 }} min read
+    </p>
+    <h1>{{ page.title }}</h1>
+    {% if page.tags.size > 0 %}
+    <p class="tags">{% for tag in page.tags %}<a class="tag" href="{{ '/blog/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>{% endfor %}</p>
+    {% endif %}
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+  <nav class="post-nav">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}
+  </nav>
+</article>
